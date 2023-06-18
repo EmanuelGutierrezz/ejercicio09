@@ -11,25 +11,30 @@
 
 <body>
   <form action="procesar.php" method="post">
-    <label for="nombre">Usuario:</label><br>
-    <input id="nombre" type="text"><br>
-    <label for="contraseña">Contraseña:</label><br>
-    <input id="contraseña" type="hidden">
-    <input type="radio" id="recordar" name="radio">
+    <label for="nombre">Usuario:</label>
+    <input id="nombre" type="text" value="nombre" name="nombre">
+    <br>
+    <!-- se envia un valor -->
+    <input id="contrasenia" type="hidden" name="contrasenia" value="contrasenia">
+    <br>
+    <!-- deben llevar el mismo atributo name -->
+    <input type="radio" id="recordar" name="recordar" value="Norecordar" checked>
     <label>No recordar contraseña</label><br>
-    <input type="radio" id="Norecordar" name="radio">
+    <input type="radio" id="Norecordar" name="recordar" value="Recordar">
     <label>Recordar contraseña</label><br>
-    <input id="firstcheck" type="checkbox">
-    <label for="">Recibir noticias</label><br>
-    <input id="secondcheck" type="checkbox">
-    <label for="">No recibir noticias</label><br>
-    <label for="">Resuma su vida:</label><br>
-    <textarea id="resumen" rows="4" cols="50"></textarea><br>
-    <label for="">Pais de origen:</label><br>
+
+    <!-- categorias que le gustan -->
+    <input id="categorias" type="checkbox" name="cat[]" value="Deportes">Deportes
+    <input id="firstcheck" type="checkbox" name="cat[]" value="Turismo">Turismo
+
+    <textarea id="resumen" rows="4" cols="50" name="resumen">Resumen Defecto</textarea><br>
+
+    <label for="">Pais de origen:</label>
+    <br>
     <select id="pais" name="pais">
-      <option>Uruguay</option>
-      <option>Argentina</option>
-      <option>Brasil</option>
+      <option selected value="1">Uruguay</option>
+      <option value="2">Argentina</option>
+      <option value="3">Brasil</option>
     </select><br>
     <input type="submit" value="enviar">
   </form>
